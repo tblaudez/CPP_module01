@@ -6,16 +6,20 @@
 /*   By: tblaudez <tblaudez@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/21 17:22:02 by tblaudez      #+#    #+#                 */
-/*   Updated: 2020/09/21 17:22:46 by tblaudez      ########   odam.nl         */
+/*   Updated: 2020/10/07 14:00:22 by tblaudez      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ZombieHorde.hpp"
 
-int	main(void)
-{
-	ZombieHorde horde = ZombieHorde(42);
+#include <cstdlib> // srand
+#include <ctime> // time
 
+int	main(void) {
+
+	srand(time(0));
+
+	ZombieHorde	horde(42);
 	horde.announce();
 
 	return 0;

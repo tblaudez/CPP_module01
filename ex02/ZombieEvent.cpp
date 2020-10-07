@@ -6,42 +6,52 @@
 /*   By: tblaudez <tblaudez@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/21 16:10:04 by tblaudez      #+#    #+#                 */
-/*   Updated: 2020/09/21 17:06:55 by tblaudez      ########   odam.nl         */
+/*   Updated: 2020/10/07 11:46:05 by tblaudez      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ZombieEvent.hpp"
 #include "Zombie.hpp"
-#include <cstdlib>
 
-ZombieEvent::ZombieEvent() : _type("default")
-{
+#include <cstdlib> // rand
+
+
+ZombieEvent::ZombieEvent() : _type("default") {
+
 }
 
-ZombieEvent::~ZombieEvent()
-{
+ZombieEvent::~ZombieEvent() {
+
 }
 
-void	ZombieEvent::setZombieType(std::string type)
-{
+void	ZombieEvent::setZombieType(std::string type) {
+
 	this->_type = type;
 }
 
-Zombie*	ZombieEvent::newZombie(std::string name) const
-{
+Zombie*	ZombieEvent::newZombie(std::string name) const {
+
 	return new Zombie(name, this->_type);
 }
-	
-void	ZombieEvent::randomChump() const
-{
-	static bool call_srand = true;
-	std::string const names[] = {"Mathieu", "Gérard", "Antoine", "Fabio", "Philippe", "Louis", "Arthur"};
 
-	if (call_srand == true) {
-		srand(time(0));
-		call_srand = false;
+void	ZombieEvent::randomChump() const {
+
+	std::string	name = this->_getRandomName();
+
+	Zombie	chump = Zombie(name, this->_type);
+	chump.announce();
+}
+
+
+std::string	ZombieEvent::_getRandomName() const {
+
+	char const			alphanum[] = "0123456789" "ABCDEFGHIJKLMNOPQRSTUVWXYZ" "abcdefghijklmnopqrstuvwxyz";
+	int const			nameSize = rand() % 12 + 1;
+	std::string			name(nameSize, '*');
+
+	for (std::string::iterator it=name.begin(); it != name.end(); it++) {
+		*it = alphanum[rand() % sizeof(alphanum)];
 	}
 
-	Zombie	chump = Zombie(names[rand() % 7], this->_type);
-	chump.announce();
+	return name;
 }

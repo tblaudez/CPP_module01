@@ -2,3 +2,4 @@ a.out
 .vscode/
 *.[oa]
 *.gch
+*.log

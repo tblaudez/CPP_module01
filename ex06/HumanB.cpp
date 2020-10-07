@@ -6,28 +6,32 @@
 /*   By: tblaudez <tblaudez@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/22 12:40:57 by tblaudez      #+#    #+#                 */
-/*   Updated: 2020/09/22 12:47:54 by tblaudez      ########   odam.nl         */
+/*   Updated: 2020/10/07 13:47:52 by tblaudez      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "HumanB.hpp"
-#include <string>
-#include <iostream>
 
-HumanB::HumanB(std::string name) : _name(name), _weapon(NULL)
-{
+#include <iostream> // cout
+
+
+HumanB::HumanB(std::string const& name) : _name(name), _weapon(NULL) {
+
 }
 
-HumanB::~HumanB()
-{
+
+HumanB::~HumanB() {
+
 }
 
-void	HumanB::setWeapon(Weapon& weapon)
-{
+
+void	HumanB::setWeapon(Weapon& weapon) {
+
 	this->_weapon = &weapon;
 }
 
-void	HumanB::attack(void) const
-{
+
+void	HumanB::attack() const {
+
 	std::cout << this->_name << " attacks with his " << this->_weapon->getType() << std::endl;
 }

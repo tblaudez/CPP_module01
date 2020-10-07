@@ -6,13 +6,13 @@
 #   By: tblaudez <tblaudez@student.codam.nl>         +#+                     #
 #                                                   +#+                      #
 #   Created: 2020/09/17 14:41:30 by tblaudez      #+#    #+#                 #
-#   Updated: 2020/10/07 13:26:03 by tblaudez      ########   odam.nl         #
+#   Updated: 2020/10/07 11:27:58 by tblaudez      ########   odam.nl         #
 #                                                                            #
 # ************************************************************************** #
 
-NAME=replace
+NAME=zombie
 
-SRC= replace.cpp
+SRC= Zombie.cpp ZombieEvent.cpp main.cpp
 OBJ= $(SRC:%.cpp=%.o)
 
 CC= /usr/bin/clang++
@@ -35,7 +35,6 @@ fclean: clean
 re: fclean all
 
 run: all
-	./$(NAME) powerpuff.txt "a" "aaaaaaaaaaaaa"
-	diff powerpuff.txt powerpuff.txt.replace || true
+	./$(NAME)
 
 .PHONY: all clean fclean re run

@@ -6,27 +6,27 @@
 /*   By: tblaudez <tblaudez@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/21 17:40:58 by tblaudez      #+#    #+#                 */
-/*   Updated: 2020/09/21 17:53:35 by tblaudez      ########   odam.nl         */
+/*   Updated: 2020/10/07 14:00:44 by tblaudez      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Human.hpp"
-#include <string>
 
-Human::Human() : _brain(Brain(42))
-{
+
+Human::Human() {
+
 }
 
-Human::~Human()
-{
+Human::~Human() {
+
 }
 
-std::string	Human::identify(void) const
-{
+std::string	Human::identify() const {
+
 	return this->_brain.identitfy();
 }
 
-Brain const&	Human::getBrain(void) const
-{
+Brain const&	Human::getBrain() const {
+
 	return this->_brain;
 }

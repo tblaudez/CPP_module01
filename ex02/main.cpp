@@ -6,30 +6,35 @@
 /*   By: tblaudez <tblaudez@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/21 16:41:39 by tblaudez      #+#    #+#                 */
-/*   Updated: 2020/09/21 17:09:28 by tblaudez      ########   odam.nl         */
+/*   Updated: 2020/10/07 13:55:51 by tblaudez      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ZombieEvent.hpp"
 
-int	main(void)
-{
-	ZombieEvent event = ZombieEvent();
-	Zombie*		zombie1 = NULL;
-	Zombie*		zombie2 = NULL;
+#include <cstdlib> // srand
+#include <ctime> // time
 
-	event.setZombieType("Festive");
-	zombie1 = event.newZombie("Felix");
+
+int	main(void) {
+
+	srand(time(0));
+
+	ZombieEvent	zEvent;
+
+	zEvent.setZombieType("Festive");
+	Zombie* zombie1 = zEvent.newZombie("Felix");
 	zombie1->announce();
-	delete zombie1;
 
-	event.setZombieType("Hungry");
-	zombie2 = event.newZombie("Larry");
+	zEvent.setZombieType("Hungry");
+	Zombie* zombie2 = zEvent.newZombie("Larry");
 	zombie2->announce();
-	delete zombie2;
 
-	event.setZombieType("Lazy");
-	event.randomChump();
+	zEvent.setZombieType("Lazy");
+	zEvent.randomChump();
+
+	delete zombie1;
+	delete zombie2;
 
 	return 0;
 }

@@ -6,14 +6,15 @@
 /*   By: tblaudez <tblaudez@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/22 14:05:27 by tblaudez      #+#    #+#                 */
-/*   Updated: 2020/09/22 14:06:58 by tblaudez      ########   odam.nl         */
+/*   Updated: 2020/10/07 13:29:55 by tblaudez      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Human.hpp"
 
-int	main(void)
-{
+
+int	main(void) {
+
 	Human	bob;
 
 	bob.action("look", "sky");

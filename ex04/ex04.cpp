@@ -6,16 +6,17 @@
 /*   By: tblaudez <tblaudez@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/21 17:30:30 by tblaudez      #+#    #+#                 */
-/*   Updated: 2020/09/21 17:33:25 by tblaudez      ########   odam.nl         */
+/*   Updated: 2020/10/07 11:50:34 by tblaudez      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include <string>
+#include <iostream> // cout
+#include <string> // duh..
 
-int	main(void)
-{
-	std::string		str = "HI THIS IS BRAIN";
+
+int	main(void) {
+
+	std::string		str("HI THIS IS BRAIN");
 	std::string*	str_ptr = &str;
 	std::string&	str_ref = str;
 

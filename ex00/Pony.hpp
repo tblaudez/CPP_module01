@@ -6,22 +6,28 @@
 /*   By: tblaudez <tblaudez@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/21 15:45:57 by tblaudez      #+#    #+#                 */
-/*   Updated: 2020/09/21 16:02:35 by tblaudez      ########   odam.nl         */
+/*   Updated: 2020/10/07 13:46:08 by tblaudez      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string>
+#pragma once
 
-class Pony
-{
+
+#include <string> // duh..
+
+
+class Pony {
+
 public:
+
 	Pony(std::string name, std::string color, int number_of_legs);
 	~Pony();
 
-	void	sayStuff(std::string stuff) const;
-	void	sayName(void) const;
+	void	sayStuff(std::string const& stuff) const;
+	void	sayName() const;
 
 	std::string name;
 	std::string	color;
-	int			number_of_legs;		
+	int			numberOfLegs;
+
 };

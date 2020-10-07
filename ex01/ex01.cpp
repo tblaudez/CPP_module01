@@ -6,17 +6,25 @@
 /*   By: tblaudez <tblaudez@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/21 16:05:27 by tblaudez      #+#    #+#                 */
-/*   Updated: 2020/09/21 16:07:49 by tblaudez      ########   odam.nl         */
+/*   Updated: 2020/10/07 13:55:36 by tblaudez      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
+#include <iostream> // cout
 
-void	memoryLeak()
-{
+
+void	memoryLeak() {
+
 	std::string*	panther = new std::string("String panther");
-	
+
 	std::cout << *panther << std::endl;
 
 	delete panther;
+}
+
+
+int	main(void) {
+
+	memoryLeak();
+	return 0;
 }

@@ -6,27 +6,30 @@
 /*   By: tblaudez <tblaudez@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/22 12:31:17 by tblaudez      #+#    #+#                 */
-/*   Updated: 2020/09/22 12:34:13 by tblaudez      ########   odam.nl         */
+/*   Updated: 2020/10/07 13:48:05 by tblaudez      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Weapon.hpp"
-#include <string>
 
-Weapon::Weapon(std::string type) : _type(type)
-{
+
+Weapon::Weapon(std::string const& type) : _type(type) {
+
 }
 
-Weapon::~Weapon()
-{
+
+Weapon::~Weapon() {
+
 }
 
-std::string const&	Weapon::getType(void) const
-{
+
+std::string const&	Weapon::getType() const {
+
 	return this->_type;
 }
 
-void			Weapon::setType(std::string type)
-{
+
+void			Weapon::setType(std::string const& type) {
+
 	this->_type = type;
 }

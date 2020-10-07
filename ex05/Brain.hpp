@@ -6,20 +6,23 @@
 /*   By: tblaudez <tblaudez@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/21 17:35:45 by tblaudez      #+#    #+#                 */
-/*   Updated: 2020/09/21 17:50:10 by tblaudez      ########   odam.nl         */
+/*   Updated: 2020/10/07 13:46:59 by tblaudez      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string>
+#pragma once
 
-class Brain
-{
-private:
-	int	_numberOfNeurons;
+
+#include <string> // duh..
+
+
+class Brain {
 
 public:
-	Brain(int neurons);
+
+	Brain();
 	~Brain();
 
-	std::string	identitfy(void) const;
+	std::string	identitfy() const;
+
 };
